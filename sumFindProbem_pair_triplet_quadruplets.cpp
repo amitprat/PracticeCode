@@ -101,6 +101,33 @@ set<vector<int> > find_triplets(vector<int> arr) {
   return triplets;
 }
 
+/*print3Sum alternative approach using sorting - taken from leetcode */
+vector<int> find_triplets(vector<int> arr,int sum) {
+  sort(arr.begin(), arr.end());
+  vector<int> triplet(3);
+  int n = arr.size();
+  int tmin = INT_MAX;
+  
+  for (int i = 0;i < n; i++) {
+    int j = i + 1;
+    int k = n - 1;
+    while (j < k) {
+        int tsum = a[i] + a[j] + a[k];
+        if( abs(sum-tsum) < tmin ) {
+            tmin = abs(sum-tsum);
+            triplet[0] = i; triplet[1] = j; triplet[2] = k;
+        }
+        if(tsum < sum)  j++;
+        else if(sum > tsum) k--;
+        else break;
+    }
+  }
+  return triplet;
+}
+
+/*Another modification of above approach can be used to find the triplet
+with minimum difference also. Just keep track of current minimum difference */
+
 /*find all unique pairs with given sum */
 //1)  using extra space - hashing
 // T = O(n), S = O(n)
