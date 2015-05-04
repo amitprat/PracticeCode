@@ -138,11 +138,11 @@ vector<string> ladderUtil(string s,string e)
     {
         string tmp = q.front(); q.pop();
         if(tmp == e) {
-            result.push_back(s);
             while(route.find(tmp) != route.end()){
                 result.insert(result.begin(),tmp);
                 tmp = route[tmp];
             }
+            result.insert(result.begin(),s);
             return result;
         }
 
