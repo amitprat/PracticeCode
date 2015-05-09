@@ -66,3 +66,6 @@ main()
 
     exit(0); 
 }
+
+
+//Reference : http://www.careercup.com/question?id=14949401
