@@ -1,3 +1,7 @@
+/*
+write a merge sort algorithm to sort a file which can't be loaded into the memory.
+Assume you can only load 10 items in the memory at a time and there are 100 items to sort.
+*/
 #include <iostream>
 #include <fstream>
 #include <sstream>
