@@ -1,0 +1,18 @@
+/*
+You are given two objects, Student and Course, and there exist a many to many relation between them. 
+One student can be enrolled for more than one course and there can be many students enrolled for a single course. 
+Design an effective data structure to store such data keeping in mind that the time complexity for search should be optimum. 
+A search can be for the list of students enrolled for a single course, or for the list of courses a single student is enrolled.
+*/
+
+1 ) 
+  unordered_map< string, list<string> > studentToCourse, courseToStudents;
+2 )
+  create graph with node at student name  and course name;
+  
+  the map data structure is to map ( string --> integer ) values in increasing order, unique values
+  
+  void addEdge(string s1,string s2) 
+  {
+    adjlist[ map[s1] ].push_back( map[s2] );
+  }
