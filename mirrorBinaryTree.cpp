@@ -1,4 +1,8 @@
-
+/*
+      3                     3                   3
+    2   1       -->     1       2     -->     1   2
+  4       5               5   4             5       4
+*/
 tree *mirror(tree *orig)
 {
   if(!orig) return NULL;
