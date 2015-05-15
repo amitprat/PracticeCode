@@ -1,4 +1,5 @@
 /*
+Reference : http://www.geeksforgeeks.org/square-root-of-a-perfect-square/
 Babylonian method for square root
 Algorithm:
 This method can be derived from (but predates) Newton–Raphson method.
