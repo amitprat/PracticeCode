@@ -1,0 +1,4 @@
+There are 2 companies making electronic chips: good and bad. Good company is making good chips with probability 80 % and defective chips with probability 20 %, and bad company is making good chips with probability 20 % and defective chips with probability 80 %. If you are getting just one chip, and the probability that it is coming from either of companies is the same, what is the probability that it is good chip?
+
+Sol : 
+I didn't answer this one correctly, but the interviewer helped me. So, if we know that probability to get good chip from good company is 0.8 and from bad company is 0.2, and first chip in the pack is good, it translates to the probability of the second chip to be good 0.8*0.8=0.64 (if pack came from the good company), and 0.2*0.2=0.04 (if pack came from the bad company). And total probability that the second chip in the pack is good is a sum of both probabilities: 0.8*0.8 + 0.2*0.2 = 0.64+0.04 = 0.68 , or 68%.
