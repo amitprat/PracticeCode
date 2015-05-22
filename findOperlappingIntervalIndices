@@ -1,0 +1,14 @@
+/*
+Given set of job schedules with start and end time, write a function that returns indexes of overlapping sets. 
+
+for ex :- 
+input -> [1,2][5,6][1,5][7,8][1,6] 
+return -> [0,1,2,4]
+*/
+I think we need to take into consideration both the starting time and the larger value of execution time for a given start time.
+eg : - let us take all the jobs started at time 1
+
+[1,2][1,5][1,6] 
+the largest time for which any job starting at 1 executed = 5
+at this point we have to consider all the jobs whose starting time lies between 1 to 5
+i.e any job that starts at 2, 3, 4 ,5, 6 also overlaps.
