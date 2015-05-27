@@ -11,9 +11,10 @@ void print(char in[],int n)
 {
   for(int i=0;i<n;i++) {
     int pos = (abs(in[i])-'A')%26;
-    if(in[pos] > 0 )
+    if(in[pos] > 0 ) {
       cout<<(char)(abs(in[i]))<<" ";
       in[pos] *= -1;
+    }
   }
 }
 
