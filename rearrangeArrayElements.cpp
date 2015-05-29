@@ -19,7 +19,7 @@ Arrange elements around median of each side
   - put at i+1 pos = smallest on right hand side
   - considering left and right subarrays as two seperate arrays -arrange elements
   
-2) Easier way = T = O(n) time;
+2) Easier way = T = O(nlgn) time;
 
 Sort array
 for i=1 to n-1
