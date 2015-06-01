@@ -1,0 +1,8 @@
+You have three covered baskets labelled "Apples", "Oranges" and "Mixed." All of them are labelled incorrectly. Choosing only one fruit from one of the baskets (and not peeking inside), how can you determine how to relabel the baskets?
+
+Always pick from "Mixed" labelled basket.
+If it is Apple : then Mixed --> Apple, Apple --> Orange, Orange -->Mixed 
+(Because Other combination , Mixed-->Apple, Apple-->Mixed , Orange-->Orange doesn't meet the condition as "Orange" label can't be correctly placed)
+Similaraly,
+If it is Orange : then Mixed --> Orange, Apple --> Mixed, Orange -->Apple 
+(Same controversy as above)
