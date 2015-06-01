@@ -1,0 +1,13 @@
+/*Reference - http://www.careercup.com/question?id=4800196680613888*/
+You have a gold bar with seven segments. For seven days, you must pay an employee with one gold segment each day. Breaking the bar only twice, how can you ensure the employee gets paid appropriately?
+
+
+You break the bar so that you get 1 peace, 2 peaces and 4 peaces. 
+**** | ** | * 
+first day you give 1 peace 
+2dn you give the one with 2 and get back the other with only 1 
+3rd you give the 2 and 1 
+4.- you give the one with 4 
+5.- 4 & 1 
+6.- 4 & 2 
+7.- All
