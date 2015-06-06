@@ -50,6 +50,39 @@ void rotate(int a[][N])
         }
     }
 }
+/*
+void rotate(int** m, int n)
+{
+	for (auto l = n; l > 1; l-=2) // l is the layer number: e.g. 5,3... 4,2
+	{
+		auto v = m[l-1][l-1];
+		for (auto j = l-2; j >= n-l; --j) // bottom row
+		{
+			auto v_tmp = m[l-1][j];
+			m[l-1][j] = v;
+			v = v_tmp;
+		}
+		for (auto i = l-2; i >= n-l; --i) // left col
+		{
+			auto v_tmp = m[i][n-l];
+			m[i][n-l] = v;
+			v = v_tmp;
+		}
+		for (auto j = n-l+1; j <= l-1; ++j) // top row
+		{
+			auto v_tmp = m[n-l][j];
+			m[n-l][j] = v;
+			v = v_tmp;
+		}
+		for (auto i = n-l+1; i <= l-1; ++i) // right col
+		{
+			auto v_tmp = m[i][l-1];
+			m[i][l-1] = v;
+			v = v_tmp;
+		}
+	}
+}
+*/
 int main()
 {
     int a[][N] = {
