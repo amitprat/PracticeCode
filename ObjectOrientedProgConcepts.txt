@@ -1,0 +1,62 @@
+Encapsulation is a mechanism by which you restrict the access to some of the object's components, as well as binding the data and methods operating on the data. 
+
+Now if we consider a laptop, as an end user I have access only to some features of the  system. So I could use the mouse to move the cursor, or the keyboard for typing text, but I would not have access to the internal components of the laptop. Again the keyboard in turn is bound internally to a set of methods that operate in response to a user action or an event.
+
+Abstraction is the ability to define an object that can represent abstract entities which can work, change state and communicate with other entities. 
+
+Let us take the example of our laptop Keyboard itself, here we have a number of Keys, each performing some function dependent on the value given. Now all keys have a certain value, that is accepted by the CPU when you press it. So we create a common object called Key with following methods.
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+class Key
+{
+  String keyValue;
+}
+
+class KeyBoard
+{
+  public void pressKeyDown(Key k)
+  {
+    if(k.keyValue==X)
+      // Do something
+  }
+}
+
+
+Now we could create Objects of class Key and pass the definition as shown.
+
+1
+2
+3
+4
+5
+6
+7
+8
+Key enter=new Key();
+enter.keyValue="Enter";
+
+Key shift=new Key();
+shift.keyValue="Shift";
+
+KeyBoard.pressKeyDown(enter);
+KeyBoard.pressKeyDown(shift);
+
+
+Here the classes Key and Keyboard are abstractions used in place of an actual Key and Keyboard.
+  
+
+Martin Krämer, computer scientist, full-stack coder,... (more)
+
+Wikipedia explains it very well: "In object-oriented programming theory, abstraction involves the facility to define objects that represent abstract "actors" that can perform work, report on and change their state, and "communicate" with other objects in the system. The term encapsulation refers to the hiding of state details, but extending the concept of data type from earlier programming languages to associate behavior most strongly with the data, and standardizing the way that different data types interact, is the beginning of abstraction. When abstraction proceeds into the operations defined, enabling objects of different types to be substituted, it is called polymorphism. When it proceeds in the opposite direction, inside the types or classes, structuring them to simplify a complex set of relationships, it is called delegation or inheritance."
