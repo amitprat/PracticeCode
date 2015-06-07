@@ -1,0 +1,9 @@
+Suppose that Amazon web site has two data tables: One is the customer table. The other is the order table. How do you find the customers who never order anything?
+
+- joeyk 6 months ago in United States for Supply Chain | Report Duplicate | Flag 
+Bloomberg LP Software Engineer / Developer SQL
+
+
+SELECT Cust_name from Customers 
+where 
+Cust_id NOT in (Select Cust_id from Orders) 
