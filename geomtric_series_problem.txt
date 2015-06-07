@@ -1,0 +1,9 @@
+an bacteria grows at the speed that it will double its volume per minute. If you put it in a jar, it will fill the jar in one hour. how long will it take to fill a half of the jar?
+
+We know that the bacteria doubles its volume in one minute. So, if it took the jar 1 hour to be full, we know that it it will take (1 hour - 1 min) i.e 59 mins for the jar to be half.
+
+1 2 4 8 16 32 ....
+1/2 => 2^k = 2^60 /2 => k = 59
+1/4 => 2^k = 2^60 /4 => k = 58
+
+like that
