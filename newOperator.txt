@@ -1,0 +1,6 @@
+Q: The New operator...how does it work, what are the steps? 
+A: I just said it creates a new memory in the heap and the reference points to it. He seemed satisfied.
+
+1. It will allocate the memory in the heap 
+2. Invokes the constructor of the object 
+3. Returns the address points to it.
