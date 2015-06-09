@@ -1,0 +1,14 @@
+bloomberg-lp-interview-questions2
+of 2 votes
+7 
+Answers
+Q: If I give you a new book, and ask you to create the index which is found at the end of the book, how will you do it. 
+A: I said for constant addition time of words (and page numbers) in the data structure, we can use Hashmap or TRIE. But since output has to be in alphabetic order, we will use a Trie DS, where at the end of each word, we simple store a list of page numbers.
+
+
+I think either option is fine, but given that you're going to do a lot more inserts / lookups than index generation (which only happens once) it might be more efficient to use a hashmap for the O(1) lookup and insertion per word, and then to spend the time sorting all indices with O(N*logN) rather than having to navigate the trie each time when adding a word to the index.
+
+- Anonymous 2 years ago | Flag Reply
+0
+of 0 votes
+We always say hashmap takes O(1) time in lookup and insertion, but doesn't generation of the hashcode effectively depend on our string length too? So that will automatically counter the disadvantage of navigating trie each time there is an insertion.
