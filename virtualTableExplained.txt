@@ -1,0 +1,35 @@
+Given the following code snippet: 
+
+class A { 
+public: 
+virtual void foo() = 0; 
+} 
+
+class B : public A { 
+void foo(){}; 
+} 
+
+Create a diagram displaying the virtual table mechanism
+
+- ddg 3 years ago in United States | Report Duplicate | Flag 
+Bloomberg LP Software Engineer / Developer C++
+
+ Email me when people comment.
+
+Country: United States
+Interview Type: In-Person
+More Questions from This Interview
+
+
+ Email me when people comment.
+
+
+2
+of 2 vote
+search for vtable explaination on learncpp.com. They have a good explaination with diagrams. 
+
+Every class has a hidden member pointer called vptr. Along with each class there is a static table called Vtable. The vptr points to vtable. Everytime an object is created, the vptr in that object points to the vtable for the class. The vtable contains pointers to the virtual functions. 
+The derived class inherits the Base class and along with it gets the vptr. However this vptr points to vtable associated with the derived class. 
+When we invoke a virtual function through the Base pointer, it always goes to the vptr. The vptr for the Base class object points to the associated vtable. The vptr for the Derived class points to the vtable of the derived class. And therefore they accesses the correct functions.
+
+- ACK 3 years ago | Flag
