@@ -1,0 +1,6 @@
+what's the signature of [ ] in std::map? why not const?
+
+
+T& operator[] ( const key_type& x );
+
+Return value is not const so that it allows you to insert a new element
