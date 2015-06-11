@@ -1,0 +1,46 @@
+What is pass by value and pass by reference? 
+a. Can a structure be passed by value? 
+b. Can an array be passed by value?
+
+- T 2 years ago in United States | Report Duplicate | Flag 
+Bloomberg LP Intern
+
+ Email me when people comment.
+
+Country: United States
+Interview Type: Phone Interview
+More Questions from This Interview
+
+
+ Email me when people comment.
+
+
+4
+of 4 vote
+Pass by Value -- When a variable is passed by value. It's value is copied into the local address space that is made available to the function.Whatever changes the code in the function makes to this variable are done inside it's local space. 
+e.g.void swap(int a,int b){ int temp; temp=a;a=b;b=temp; } 
+call to this funtion swap(x,y) willl not swap the values of x and y. 
+
+Pass by reference -- When you pass by reference the compiler implicitly does this when it encounters the use of the variable in the function code. It will refer to the original variable that was passed. and the change to the value of that variable will be done at the address location it was originally placed at. 
+e.g. void swap(int &a,int &b){int temp; temp=a;a=b;b=temp;} 
+swap(x,y) ... this will interchange the values of x and y. 
+
+Pass by address ... In pass by address you do the compilers job. You explicitly catch the original address of the variable in a special variable called as a pointer. then you use the derefrencing operator to change the value in the address. 
+e.g. void swap(int *a, int *b){ int temp; temp = (*a); *a=*b; *b=temp; } 
+swap(&x,&y) .... this will interchange the values of x and y. 
+An array is a sequence of addresses.. Passing it by value would have been counter intuitive and would require huge amount of overhead. Hence arrays are always passed by reference. 
+
+You could define an array inside of a structure and then pass it. that would pass it by value.
+
+- isandesh7 2 years ago | Flag Reply
+2
+of 2 vote
+1) We pass by value when you don't want the value to be changed on client side which passes its value. Value is affected locally. 
+When we pass by reference, the value corresponding to the reference gets changed locally and globally(changed on client side too) 
+2) Yes, Stricture can be passed by Value and reference 
+3)No. Basically array value always have a reference to a object. And its is not a primitive datatype. So Array can only be passed by reference. 
+
+Note:Fixed-size arrays (size fixed at compile-time) can be part of a struct, and then they are passed by value. 
+
+I mean declarations like int foo[5]; inside a struct. 
+Credit: Anonymous
