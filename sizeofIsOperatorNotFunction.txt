@@ -1,0 +1,10 @@
+Because the C standard says so, and it gets the only vote.
+
+As consequences:
+
+The operand of sizeof can be a bare cast, sizeof (int), instead of an object expression.
+The parentheses are unnecessary: int a; printf("%d\n", sizeof a); is perfectly fine. They're often seen, firstly because they're needed as part of a type cast expression, and secondly because sizeof has very high precedence, so sizeof a + b isn't the same as sizeof (a+b). But they aren't part of the invocation of sizeof, they're part of the operand.
+You can't take the address of sizeof.
+The expression which is the operand of sizeof is not evaluated at runtime (sizeof a++ does not modify a).
+The expression which is the operand of sizeof can have any type except void, or function types. Indeed, that's kind of the point of sizeof.
+A function would differ on all those points. There are probably other differences between a function and a unary operator, but I think that's enough to show why sizeof could not be a function even if there was a reason to want it to be.
