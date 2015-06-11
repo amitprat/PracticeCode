@@ -1,0 +1,28 @@
+How to Implement Linkedlist using arrays? Just the fundamentals. The followup question was what are the disadvantages in terms of memory when the array resizes.
+
+- Luc 3 years ago in United States | Report Duplicate | Flag 
+Bloomberg LP Financial Application Engineer Algorithm
+
+ Email me when people comment.
+
+Country: United States
+Interview Type: Phone Interview
+More Questions from This Interview
+
+
+ Email me when people comment.
+
+
+2
+of 2 vote
+using double array, one containing the value other containing the index of the next element.
+
+- Anonymous 3 years ago | Flag Reply
+0
+of 0 votes
+In that case too, cost of inserting/deleting an element will be linear in worst case time. Or am I missing something here?
+
+- Second Attempt 2 years ago | Flag
+2
+of 2 vote
+Consider arr[][3] as a linkedlist where arr[i][1] stores the data, arr[i][0] stores the previous index, and arr[i][2] stores the next index. Adding an element is trivial. To delete an element, modify the next index of the prev element and prev index of the next element. To prevent possible "holes" in the array on multiple deletions, maintain a "free list" that you can use to add an element to the deleted index instead of using a new slot altogether.
