@@ -1,0 +1,12 @@
+Given constant integers x and t, write a function that takes no argument and returns true if the function has been called x number of times in last t secs.
+
+
+const int x; 
+const int t; 
+bool have_we_made_enough_calls_lately() { 
+static deque<int> times; 
+times.push_back(current_time_in_msec()); 
+if (times.size() > x) 
+times.pop_front(); 
+return times.back() - times.front() <= 1000 * t; 
+}
