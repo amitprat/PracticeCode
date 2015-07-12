@@ -6,10 +6,10 @@ int countNum(int num)
   int b = 1;
   while(num/b > 9)  b*=10;
   
-  int m = num/10;
-  int r = num%10;
+  int m = num/b;
+  int r = num%b;
   
-  if(m == 3)  return (r+1) + m*countNum(b-1);
-  else if(m > 3)  return (b-1) + m*countNum(b-1) + countNum(r);
-  returnr m*countNum(b-1) + countNum(r);
+  if(m == 3)  return (r+1) + m*countNum(b-1) + countNum(r);
+  else if(m > 3)  return b + m*countNum(b-1) + countNum(r);
+  return m*countNum(b-1) + countNum(r);
 }
