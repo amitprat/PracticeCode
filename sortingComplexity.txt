@@ -1,0 +1,8 @@
+Design an algorithm to sort an array whose first n-sqrt(n) elements are already sorted. What is the complexity of the algorithm.
+
+I think the intent here is that, we have 2 methods. 
+
+- Sort the rightmost half and merge (in place). Complexity = n + sqrt(n)log(n) 
+- Use the insertion sort way . Complexity = n*sqrt(n) 
+
+So, 1st method is better than 2nd.
