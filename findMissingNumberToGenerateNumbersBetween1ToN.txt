@@ -1,0 +1,44 @@
+/*
+Google interview Question - taken fron careercup
+
+> Given an integer:N and an array int arr[], you have to add some 
+> elements to the array so that you can generate from 1 to N by using 
+> (add) the elements in the array. 
+
+Please keep in mind that you can only use each element in the array once when generating a certain x (1<=x<=N). 
+Return the count of the least adding numbers. 
+
+For example: 
+
+N=6, arr = [1, 3] 
+
+1 is already in arr. 
+
+add 2 to the arr. 
+
+3 is already in arr 
+
+4 = 1 + 3 
+
+5 = 2 + 3 
+
+6 = 1 + 2 + 3 
+
+So we return 1 since we only need to add one element which is 2. 
+
+Can anyone give some hints?
+
+
+Minimum floor(Log(N))+1 elements will be needed to make all 1 to N numbers using ADD operation.
+
+2^0 = 1 (if N<=1 then required number of elements is 0+1 = 1)
+2^1 = 2 (if N>=2 & N<=3 then required number of elements is 1+1 = 2)
+2^2 = 4 (if N>=4 & N<=7 then required number of elements is 2+1 = 3)
+2^3 = 8 (if N>=8 & N<=15 then required number of elements is 3+1 = 4)
+2^4 = 16 (if N>=16 & N<=31 then required number of elements is 3+1 = 4)
+
+This only tells about the minimum number of unique elements required to generate numbers in given range but not
+exactly what numbers to add.
+Logic is - 
+with given number 1,2 and 4, we can generate only upto 7, so for generate more than 7, we need 8. Similar, for other cases too.
+If we want what numbers to add, then probably we may need more regorious solution with subset sum finding mechanism.
