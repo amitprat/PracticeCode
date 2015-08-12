@@ -45,11 +45,9 @@ a > b > c
 In the first case we know that a < c. Since the first condition is met, we can swap b and c to meet the second condition, and the first condition is still met.
 
 In the second case, both conditions are already met.
-
 In the third case, we have to swap a and b to give b < a ? c. But we already know that b < c, so if a < c then swapping to meet that second condition doesn't invalidate the first condition.
 
 In the last case we know that a > c, so swapping a and b to meet the first condition maintains the validity of the second condition.
-
 Now, you add a fourth number to the sequence. You have:
 
 a < b > c ? d
