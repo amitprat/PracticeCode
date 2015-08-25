@@ -32,10 +32,6 @@ int main()
 #endif
 
 #ifdef TERNARYTREE_SUGGESTOR
-#include     <iostream>
-#include     <string.h>
-#include     <map>
-using namespace std;
 
 typedef struct _tst
 {
