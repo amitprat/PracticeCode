@@ -45,3 +45,35 @@ int main()
 	int c[]={2,4,6,12,13};
 	mindiff(a,b,c,5);
 }
+
+
+/*
+My Sol
+*/
+#include        <iostream>
+#include        <cmath>
+#include        <algorithm>
+#include	<climits>
+using namespace std;
+
+
+int minDiff( int a[], int b[], int c[] ,int n) {
+    int i=0,j=0,k=0;
+    int mn = INT_MAX;
+    while(i < n && j < n && k < n) {
+        mn = min(mn, abs(a[i]-b[j]) + abs(b[j]-c[k]) + abs(c[k]-a[i]));
+        if(mn == 0)     break;
+        if(a[i] <= b[j] && a[i] <= c[k])        i++;
+        else if(b[j] <= a[i] && b[j] <= c[k])  j++;
+        else k++;
+    }
+    return mn;
+}
+int main()
+{
+    int a[]={1,2,13,15,18};
+    int b[]={3,5,10,12,13};
+    int c[]={2,4,6,12,14};
+    cout<< minDiff(a,b,c,5) <<endl;
+    return 0;
+}
