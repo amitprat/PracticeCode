@@ -1,5 +1,6 @@
+/*
 smartPointer
-
+*/
 template <class T>
 class SmartPointer
 {
@@ -37,3 +38,13 @@ class SmartPointer
     return ptr;
   }
 };
+int main()
+{
+    SmartPointer<int> ptr(new int());
+    *ptr = 20;
+    cout << *ptr;
+    SmartPointer<int> ptr1;
+    ptr1 = ptr; //assignment operation
+    SmartPointer<int> ptr2 = ptr; //copy constructor
+    return 0;
+}
