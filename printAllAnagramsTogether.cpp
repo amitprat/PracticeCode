@@ -1,3 +1,28 @@
+/*
+Given array of words, group the anagrams 
+IP:{tar,rat,banana,atr} 
+OP:{[tar,rat,atr],[banana]}
+*/
+/*Psuedo Code*/
+map<string, vector<string> m;
+for (int i=0; i < strs.size(); i++)
+{
+    string temp = strs[i];
+    sort(temp.begin(), temp.end());
+    m[temp].push_back(strs[i]);
+}
+int k = 0;
+for (auto it = m.begin(); it != m.end(); it++)
+{
+       vector<string>& v = it->second;
+       for (int i=0; i < v.size(); i++)
+             strs[k++] = v[i]; 
+}
+
+
+/*
+Code 
+*/
 #include    <iostream>
 #include    <unordered_map>
 #include    <list>
