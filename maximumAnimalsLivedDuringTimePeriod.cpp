@@ -5,6 +5,7 @@ Given life time of different animals. Find period when maximum number of animals
 Input intervals (or lifetimes): [5, 11], [6, 18], [2, 5], [3,12]
 
 */
+
 /*
 
 Solution1 - 
