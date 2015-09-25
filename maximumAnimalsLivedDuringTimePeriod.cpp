@@ -36,9 +36,11 @@ vector<Intervals> solution( Interval in[], int n )  {
     
     int i=0,j=0;
     while(i<n && j<n) {
-        maxDiff = max( maxDiff, i-j+1 );
-        res.push_back( Interval(s[i],e[j]);
-        if( s[i] <= e[j] )  i++;
+        if( s[i] <= e[j] ) {
+            i++;
+            maxDiff = max( maxDiff, i-j+1 );
+            res.push_back( Interval(s[i],e[j]);
+        }
         else j++;
     }
     
