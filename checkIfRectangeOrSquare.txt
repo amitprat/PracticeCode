@@ -1,0 +1,12 @@
+/*
+Give four points, determine is it is a square, rectangle or none of the above.
+*/
+
+/*
+1) Let P1,P2,P3,P4 be the points
+2) Find all possible distances between them. There will be six.
+3) Sort these distances. Let them be D1,D2,D3,D4,D5,D6
+4) If the first 4 and last 2 are equal, its a square
+5) If the first 2, second 2 and last 2 are equal, its a rectangle
+6) If not, its neither
+*/
