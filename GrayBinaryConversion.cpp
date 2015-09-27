@@ -15,7 +15,7 @@ int binary(int n) {
     return n;
 }
 
-/*Generate first N gray codes*/
+/*Generate first N Bit gray codes*/
 vector<string> generate_gkg_method(int n)
 {
     vector<string> v;
