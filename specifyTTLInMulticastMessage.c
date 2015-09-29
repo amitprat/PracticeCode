@@ -1,3 +1,4 @@
+//Source : http://cs.baylor.edu/~donahoo/practical/CSockets/code/MulticastSender.c
 #include <stdio.h>      /* for fprintf() */
 #include <sys/socket.h> /* for socket(), connect(), send(), and recv() */
 #include <arpa/inet.h>  /* for sockaddr_in and inet_addr() */
