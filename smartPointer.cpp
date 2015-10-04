@@ -12,7 +12,7 @@ class SmartPointer
     this->ptr = ptr;
     count++;
   }
-  SmartPointer(const SmartPointer ptr) {
+  SmartPointer(const SmartPointer &ptr) {
     this->ptr = ptr.ptr;
     this->count = ptr.count;
     count++;
@@ -21,7 +21,7 @@ class SmartPointer
     count--;
     if(!count)  delete ptr;
   }
-  SmartPointer & operator = (const SmartPointer sptr) {
+  SmartPointer & operator = (const SmartPointer &sptr) {
     if( ptr != sptr.ptr ) {
       count--;
       if(!cout) delete ptr;
