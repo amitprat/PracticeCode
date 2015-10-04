@@ -78,3 +78,26 @@ int main()
 
 
 - If we get 0 then we just need to left shift 1 by the original number's length, example: "110010010" to "1000000000" (512). - Next power of 2. 
+
+
+/*Another approach - similar question*/
+//Ref::http://www.careercup.com/question?id=5186975457869824
+/*
+Sparse number is an integer if there are no adjacent 1 in it's binary representation. 
+Like: 5 -> 101 (no adjacent 1) 
+9 -> 1001 (no adjacent 1) 
+while 6-> 110 is not sparse number. 
+Now you are given an integer find the NEXT BIGGER sparse number.Please mind 'it is next bigger'.
+
+
+
+Not sure about sparse number but below code will give no adjacent 1. Can someone check
+*/
+private static void nextSparse(int x) {
+		for (int i = x + 1; i < Integer.MAX_VALUE; i++) {
+			if ((i & (i * 2)) == 0) {
+				System.out.println(i);
+				return;
+			}
+		}
+	}
