@@ -12,6 +12,21 @@ int ceil(int a[],int l,int r,int e)
     }
     return  (a[r] >= e ) ? r : -1;
 }
+/*
+* Here the upper median is taken to avoid case for two elements or exra check for them
+* when the floor is generally either the last element or missing.
+* 1 5 6 9
+* find floor(12)
+* Divisio will work as (in case  of lower median or default median)- 
+* 5 6 9, 6 9 and then 6 9, 6 9 ....
+* to avoid this infinite loop,
+* add check
+* if(l+1 == r) { return ... }
+* if(l<r-1) {
+* do as usual
+* }
+}
+*/
 int floor(int a[],int l,int r,int e)
 {
     if(l < r) {
