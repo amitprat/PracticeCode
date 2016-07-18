@@ -1,0 +1,71 @@
+//Reference : http://www.csee.wvu.edu/~jdm/classes/cs550/notes/tech/mutex/pc-sem.html
+
+A Semaphore Solution to the Producer-Consumer Problem
+
+This is an illustration of a solution to the classic producer-consumer (bounded-buffer) problem using semaphores.
+
+CONCEPT: Producers produce items to be stored in the buffer. Consumers remove and consume items which have been stored. Mutual exclusion must be enforced on the buffer itself. Moreover, producers can store only when there is an empty slot, and consumers can remove only when there is a full slot.
+
+Three semaphores are used. The binary semaphore mutex controlls access to the buffer itself. The counting semaphore empty keeps track of empty slots, and the counting semaphore full keeps track of full slots.
+
+In this example, the buffer is implemented as an array of size MAX treated as a circular (ring) buffer. Variables in and out give the index of the next position for putting in and taking out (if any). Variable count gives the number of items in the buffer.
+
+INITIALIZATION:
+
+	shared binary semaphore mutex = 1;
+	shared counting semaphore empty = MAX;
+	shared counting semaphore full = 0;
+	shared anytype buffer[MAX];
+	shared int in, out, count;
+
+
+PRODUCER :
+
+	anytype item;
+
+	repeat {
+
+		/* produce something */
+		item = produce();
+
+		/* wait for an empty space */
+		P(empty);
+
+		/* store the item */
+		P(mutex);
+		buffer[in] = item;
+		in = in + 1 mod MAX;
+		count = count + 1;
+		V(mutex);
+
+		/* report the new full slot */
+		V(full);
+
+	} until done;
+
+
+
+
+CONSUMER:
+
+	anytype item;
+
+	repeat {
+
+		/* wait for a stored item */
+		P(full);
+
+		/* remove the item */
+		P(mutex);
+		item = buffer[out];
+		out = out + 1 mod MAX;
+		count = count - 1;
+		V(mutex);
+
+		/* report the new empty slot */
+		V(empty);
+
+		/* consume it */
+		consume(item);
+
+	} until done;
