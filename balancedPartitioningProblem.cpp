@@ -111,3 +111,48 @@ int main(){
         balancePartition(a,n-1);
         return 0;
 }
+
+
+/* Taken from careercup - 
+this simply checks for s/2 is present or not using subset sum approach.
+We can extend this approach to find the minDiff sum. 
+For each row = n-1 to 1 , if table[row][lastCol] == true, then that sum is closest.
+*/
+
+//refer : https://www.careercup.com/question?id=5095048703115264
+public class Main {
+
+	public static void main(String[] args) {
+		int[] array = {1, 5, 11, 5, 2};
+		if(canBePartitioned(array)){
+			System.out.println("the given array can be partitioned.");
+		}else{
+			System.out.println("the given array cannot be partitioned.");
+		}
+		
+	}
+	
+	public static boolean canBePartitioned(int[] array){
+		int sum = 0;
+		for(int i=0; i<array.length; i++){
+			sum += array[i];
+		}
+		if(sum%1 == 1){
+			return false;
+		}
+		boolean[][] partition = new boolean[sum/2+1][array.length+1];
+		for(int i=0;i<array.length+1;i++){
+			partition[0][i] = true;
+		}
+		for(int i=1;i<sum/2+1; i++){
+			partition[i][0] = false;
+		}
+		for(int i=1; i<sum/2+1; i++){
+			for(int j=1; j<array.length+1; j++){
+				partition[i][j] = partition[i][j-1];
+				if(i >= array[j-1])partition[i][j] = partition[i-array[j-1]][j-1] || partition[i][j];
+			}
+		}
+		return partition[sum/2][array.length];
+	}
+}
