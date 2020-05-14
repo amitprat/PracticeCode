@@ -93,3 +93,24 @@ void printIncreasingNumsExtended( int n ) {
   }
   cout<<endl;
 }
+
+/*
+  Find kth multiple of 3 5 and 7
+*/
+int findKthMultiple(vector<int> mul, int k) {
+    vector<int> result;
+    result.push_back(1);
+    int c3 = 0, c5 =0, c7 = 0;
+    int mn = 1;
+    while(k--) {
+        mn = min(result[c3]*3, min(result[c5]*5, result[c7]*7));
+        result.push_back(mn);
+        if(mn == result[c3]*3) c3++;
+        if(mn == result[c5]*5) c5++;
+        if(mn == result[c7]*7) c7++;
+    }
+    for(auto i : result) cout<<i<<" ";
+    cout<<endl;
+    
+    return mn;
+}
